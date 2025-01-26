@@ -92,3 +92,19 @@ h2 {
     width: 100%;
     height: auto; /* Keeps the aspect ratio intact */
 }
+
+/* Style for the link itself */
+.modern-link {
+    color: #1a73e8; /* Bright color, but can be customized */
+    text-decoration: none; /* Removes the underline */
+    font-weight: 500; /* Slightly bolder text */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+  
+/* Hover effect */
+.modern-link:hover {
+    color: #ff5722; /* Change to a different color on hover */
+    text-decoration: underline; /* Optionally add an underline on hover */
+}
+  
+  
