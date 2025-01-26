@@ -14,7 +14,13 @@
         </nav>
     </header>
     <main>
-        <h1>Personal Projects</h1>
+        <h1>Personal Projects 👨‍💻</h1>
+        <h2><a href="https://github.com/Sam-analyst/crypto_trading_project" target="_blank">Cryptocurrency Trading Data</a></h2>
+        <p>
+            This was my first personal coding project, inspired by my interest in financial
+            markets. I wanted to create a script to pull trading data, and below is a sample
+            chart of the data I aimed to collect.
+        </p>
         <!-- TradingView Widget -->
         <div class="tradingview-widget-container">
             <div id="tradingview_chart"></div>
@@ -40,6 +46,87 @@
             });
             </script>
         </div>
+        <p>
+            After some reasearch, I discovered Coinbase offers a free API.
+            As a Python beginner, I also wanted to dive into object-oriented 
+            programming with classes. The result was the following:
+        </p>
+        <img src="images/crypto_project_image.png" alt="Crypto project image", class="crypto_image">
+        <p>
+            While I would design the code differently today, this project
+            taught me a lot about working with classes. Although I took a
+            break after completing it, if I revisit this project, I'd like
+            to add technical indicators and backtesting capabilities to
+            analyze profitability.
+        </p>
+        <h2><a href="https://github.com/Sam-analyst/nlp_projects" target="_blank">NLP Projects</a></h2>
+        <p>
+            After the release of ChatGPT and other LLMs, I wanted to explore how
+            I could integrate them into my code. For this project, I used a
+            pretrained sentiment analysis model from Hugging Face. Once downloaded,
+            I could input text and get a positive/negative label along with a score.
+            This could be applied to analyze sentiment on social media and reviews
+            on a site. Setting it up was surprisingly quick and easy, though
+            it could benefit from some fine-tuning. I also built a UI to interact
+            with the model using Gradio.
+        </p>
+        <img src="images/nlp_project_image.png" alt="NLP project image", class="nlp_image">
+        <h2><a href="https://github.com/Sam-analyst/github_actions" target="_blank">GitHub Actions</a></h2>
+        <p>
+            This small repo was my attempt to learn and experiment with GitHub Actions.
+            Although I don't come from a software engineering background, I understand
+            the importance of testing and QA. After learning about GitHub Actions and
+            its role in CI/CD, I decided to dive deeper. I created a simple function
+            and unit test to experiment with, after watching these helpful
+            <a href="https://www.youtube.com/watch?v=-hVG9z0fCac&list=PLArH6NjfKsUhvGHrpag7SuPumMzQRhUKY" target="_blank">YouTube Tutorials</a>.
+            After completing this project, I was impressed by how powerful
+            GitHub Actions is and how it could greatly benefit teams that manage code.
+        </p>
+        <h2><a href="https://github.com/Sam-analyst/twitch_pipeline" target="_blank">Twitch Data Pipeline</a></h2>
+        <p>    
+            This is my latest project, which is still a work in progress. The goal is to create
+            an end-to-end data pipeline that extracts data from Twitch's API to track trends over
+            time. For context, Twitch is a popular video game streaming platform where people can 
+            watch talented gamers play video games in real time. Twitch has a page on their site that shows the 
+            most popular games in terms of viewer counts. However, you can only see what the current counts are.
+            I thought it would be a neat idea to track viewer trends over time. The goal was to
+            develop a series of functions pulling data from Twitch every couple hours, store that 
+            in a database, and visualize it. Normally, I would have used Databricks
+            for managing my pipeline and Power BI for visualization. Instead, I chose technologies
+            I haven't worked with yet.
+            <br>
+            <br>
+            For storage, I ended up choosing Snowflake on AWS since it's a very popular platform. 
+            However, I quickly noticed it didn't have the same 
+            managed workflow capabilities as Databricks (to my knowledge). This wasn't an issue
+            for me though since it gave me the opportunity to work directly with Airflow.
+            <br>
+            <br>
+            Unfortunately, Airflow also presented its own hurdles for me. My aging MacBook
+            couldn't support the necessary dependencies so I turned to AWS EC2 instances.
+            Spinning up an EC2 instance was cheap, easy to SSH into with vscode, and most 
+            importantly, could run Airflow. Shortly after setting up Airflow to connect to
+            Snowflake, I realized Airflow would stop running after logging out of the instance.
+            I did some research into Ubuntu's systemd, but ultimately decided that using 
+            a managed Airflow service provider was more practical. I then decided to go
+            with Astronomer and signed up for their free trial.
+            <br>
+            <br>
+            While I ultimately was able to get my pipeline running in Astronomer
+            (<a href="https://github.com/Sam-analyst/twitch_pipeline" target="_blank">code</a>),
+            it took me a few days to learn their platform. I also had to upskill on Docker, a 
+            technology I was planning to learn anyway.
+            <br>
+            <br>
+            The last step, which is what I'm currently working on, is visualizing the data.
+            I explored Grafana, but found their Snowflake
+            plugin requires a paid subscription. While I could pay for the subscription
+            or find a free alternative, I'm having thoughts about migrating my data 
+            off of Snowflake as it's expensive and the data I'm working with isn't big.
+            <br>
+            <br>
+            I'll update this page as I make more progress.
+        </p>
     </main>
 </body>
 </html>

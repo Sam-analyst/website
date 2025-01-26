@@ -83,3 +83,12 @@ h2 {
     background-color: #3d8c3a; /* Even darker green when clicked */
 }
 
+.crypto_image {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio intact */
+}
+
+.nlp_image {
+    width: 100%;
+    height: auto; /* Keeps the aspect ratio intact */
+}
