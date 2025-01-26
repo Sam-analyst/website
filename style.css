@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    background: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add responsive margin when screen width is 900px or smaller */
+/* 900px was chosen since it's larger than max-width of main box */
+@media (max-width: 900px) {
+    main {
+        margin: 20px; /* Ensure some margin between the main box and the edges of the viewport */
+    }
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profile-image {
+    width: 50%; /* Scale with the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Optional: limit the maximum size */
+    max-height: 300px; /* Optional: limit the maximum size */
+    margin-left: 20px; /* Adds some space between text and image */
+    border-radius: 50%; /* Make it circular */
+    border: 4px solid #333; /* Adds border around image */
+}
+
+h2 {
+    border-bottom: 1px solid #555; /* Slightly lighter gray for h2 */
+    padding-bottom: 8px;
+}
+
+/* Style for the download button */
+.download-btn {
+    display: inline-block; /* Make it behave like a button */
+    padding: 12px 24px; /* Adds some padding inside the button */
+    background-color: green; /* Green background */
+    color: white; /* White text color */
+    text-align: center; /* Centers the text */
+    text-decoration: none; /* Removes the default underline from links */
+    font-size: 16px; /* Adjust the font size */
+    border-radius: 5px; /* Round the corners of the button */
+    margin-top: 20px; /* Adds some space above the button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: gives the button a subtle shadow */
+    transition: background-color 0.3s ease; /* Smooth transition when the button is hovered */
+}
+
+.download-btn:hover {
+    background-color: #45a049; /* Darker green when hovered */
+}
+
+.download-btn:active {
+    background-color: #3d8c3a; /* Even darker green when clicked */
+}
+
