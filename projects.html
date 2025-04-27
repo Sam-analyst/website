@@ -97,7 +97,6 @@
                     after exploring a few ideas, mainly because they offer a free public API. It felt like a great
                     opportunity to build something real using live data.
                 </p>
-                <br>
                 <p>
                     The concept was straightforward. Twitch has a section that shows how many viewers are watching each
                     game in real-time. I wanted to track that over time to uncover trends, like which games are
@@ -109,7 +108,6 @@
                     initial plan was to pull Twitch data every few hours, store it for downstream visualizations, and
                     orchestrate everything with Airflow. It sounded simple, but in practice, it wasn’t.
                 </p>
-                <br>
                 <p>
                     With the idea in place, I started by building a <a
                         href="https://github.com/Sam-analyst/twitch_game_analytics" target="_blank"
@@ -117,7 +115,6 @@
                     separate repo for the pipeline, which would use that package and store the data. At the time, I
                     was eager to learn Snowflake, so I chose it as my data warehouse.
                 </p>
-                <br>
                 <p>
                     Writing the Twitch package was actually the easiest part. I signed up for a Twitch developer
                     account, figured out authentication, and began pulling data within a few hours. One gotcha was
@@ -125,7 +122,6 @@
                     request a temporary token, which is what the API actually expects. Once the Twitch package was in a
                     good spot, I created a Snowflake account. Getting up to speed with Snowflake took only a few hours.
                 </p>
-                <br>
                 <p>
                     I then attempted to run the full pipeline using Airflow on my local MacBook. That quickly became a
                     mess due to dependency conflicts (my MacBook is a bit dated). After hitting a wall, I pivoted to
@@ -133,7 +129,6 @@
                     move. Setting up an EC2 instance took a few more hours—creating the account, configuring security
                     rules, and getting everything running.
                 </p>
-                <br>
                 <p>
                     I finally got Airflow running on an EC2 instance, executing the pipeline and saving Twitch data into
                     Snowflake. But I ran into another issue. As soon as I logged out, Airflow stopped, which was a big
@@ -144,7 +139,6 @@
                     deployed, the pipeline ran automatically every few hours, and for the first time, everything ran
                     smoothly.
                 </p>
-                <br>
                 <p>
                     While the pipeline worked great, I noticed the costs were adding up. Astronomer’s free tier expired,
                     and running the pipeline cost about $10/day on Astronomer and another $10/day for Snowflake compute.
@@ -157,7 +151,6 @@
                     I’d run Astronomer locally on my EC2 instance and use AWS S3 for storage. This change saved me a ton
                     of money, as running the EC2 instance only cost around $0.10 per hour, or $2.40 per day.
                 </p>
-                <br>
                 <p>
                     Setting up the S3 bucket was straightforward, but I had to figure out how to save data to S3 in
                     Parquet format. I discovered that Astronomer’s S3 hook had built-in functions for this, so I spent
@@ -171,7 +164,6 @@
                     transformation DAG looks like now:
                 </p>
                 <img src="images/transform-twitch-dag.png" alt="Twitch DAG" , class="nlp_image">
-                <br>
                 <p>
                     After the pipeline was running smoothly for a few days, the final step was visualizing the data. I
                     heard good things about Grafana and liked the look of their dashboards, so I decided to give it a
@@ -188,7 +180,6 @@
                     These filters help speed up rendering while allowing users to search for less popular games by
                     adjusting the game name and clearing the rank fields.
                 </p>
-                <br>
                 <p>
                     There’s still plenty of room for improvement in the dashboard, like refining the ranking
                     methodology, but I’m happy with how the project turned out for now. I’m planning to shift my focus
