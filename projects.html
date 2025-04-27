@@ -98,7 +98,6 @@
                     opportunity to build something real using live data.
                 </p>
                 <br>
-                <br>
                 <p>
                     The concept was straightforward. Twitch has a section that shows how many viewers are watching each
                     game in real-time. I wanted to track that over time to uncover trends, like which games are
@@ -111,7 +110,6 @@
                     orchestrate everything with Airflow. It sounded simple, but in practice, it wasn’t.
                 </p>
                 <br>
-                <br>
                 <p>
                     With the idea in place, I started by building a <a
                         href="https://github.com/Sam-analyst/twitch_game_analytics" target="_blank"
@@ -119,7 +117,6 @@
                     separate repo for the pipeline, which would use that package and store the data. At the time, I
                     was eager to learn Snowflake, so I chose it as my data warehouse.
                 </p>
-                <br>
                 <br>
                 <p>
                     Writing the Twitch package was actually the easiest part. I signed up for a Twitch developer
@@ -129,7 +126,6 @@
                     good spot, I created a Snowflake account. Getting up to speed with Snowflake took only a few hours.
                 </p>
                 <br>
-                <br>
                 <p>
                     I then attempted to run the full pipeline using Airflow on my local MacBook. That quickly became a
                     mess due to dependency conflicts (my MacBook is a bit dated). After hitting a wall, I pivoted to
@@ -137,7 +133,6 @@
                     move. Setting up an EC2 instance took a few more hours—creating the account, configuring security
                     rules, and getting everything running.
                 </p>
-                <br>
                 <br>
                 <p>
                     I finally got Airflow running on an EC2 instance, executing the pipeline and saving Twitch data into
@@ -149,7 +144,6 @@
                     deployed, the pipeline ran automatically every few hours, and for the first time, everything ran
                     smoothly.
                 </p>
-                <br>
                 <br>
                 <p>
                     While the pipeline worked great, I noticed the costs were adding up. Astronomer’s free tier expired,
@@ -164,7 +158,6 @@
                     of money, as running the EC2 instance only cost around $0.10 per hour, or $2.40 per day.
                 </p>
                 <br>
-                <br>
                 <p>
                     Setting up the S3 bucket was straightforward, but I had to figure out how to save data to S3 in
                     Parquet format. I discovered that Astronomer’s S3 hook had built-in functions for this, so I spent
@@ -178,7 +171,6 @@
                     transformation DAG looks like now:
                 </p>
                 <img src="images/transform-twitch-dag.png" alt="Twitch DAG" , class="nlp_image">
-                <br>
                 <br>
                 <p>
                     After the pipeline was running smoothly for a few days, the final step was visualizing the data. I
@@ -196,7 +188,6 @@
                     These filters help speed up rendering while allowing users to search for less popular games by
                     adjusting the game name and clearing the rank fields.
                 </p>
-                <br>
                 <br>
                 <p>
                     There’s still plenty of room for improvement in the dashboard, like refining the ranking
