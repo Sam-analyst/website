@@ -106,5 +106,36 @@ h2 {
     color: #ff5722; /* Change to a different color on hover */
     text-decoration: underline; /* Optionally add an underline on hover */
 }
+
+.social-buttons {
+    margin-top: 25px;
+}
+
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.icon-btn.linkedin {
+    background-color: #0077b5;
+}
+
+.icon-btn.github {
+    background-color: #333;
+}
+
+.icon-btn:hover {
+    opacity: 0.85;
+}
+
   
   
